@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>으라차차 와이키키</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+
+    <style>
+        /* 공통적인 부분 초기화 */
+        * { margin: 0; padding: 0; }
+        html, body { height: 100%; }
+        html { background-color: #f2f4f7; }
+        body {
+            font-family: 'Nanum Gothic', "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #34495e;
+        }
+        a { text-decoration: none; }
+        li { list-style: none; }
+
+        .margin-20 { margin-bottom: 20px; }
+        .margin-40 { margin-bottom: 40px; }
+        .bold { font-weight: bold; }
+        .red { color: red; }
+
+        #nav {
+            z-index: 30;
+            position: fixed;
+
+            padding: .5rem 0;
+            width: 100%; height: 61px;
+
+            background-color: #fff;
+            box-shadow: 0px 1px 1px #e5e5e5;
+        }
+        .nav-container {
+            position: relative;
+            margin: 0 auto;
+            width: 960px; height: 100%;
+        }
+        .nav-logo {
+            position: absolute;
+            top: 15px; left: 0px;
+
+            background: -webkit-linear-gradient(0deg, #a8d5f4, #70dfc1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-linklist {
+            position: absolute;
+            top: 20px; right: 0px;
+            overflow: hidden;
+        }
+        .nav-link {
+            margin-right: 20px;
+            float: left;
+        }
+        .nav-link > a {
+            color: #232;
+            font-size: 17px;
+            font-weight: 600;
+        }
+        .nav-link > a:hover {
+            background: -webkit-linear-gradient(0deg, #a8d5f4, #70dfc1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #intro {
+            padding: 77px 0;
+            width: 100%;
+        }
+        .intro-img-wrapper {
+            width: 100%; height: 500px;
+            background-color: #f1e2ab;
+
+            overflow: hidden;
+        }
+        .intro-img {
+            display: block;
+            margin: 0 auto;
+            max-width: 1400px;
+            height: 500px;
+
+            transition: all 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+        }
+        .intro-img:hover {
+            transform: scale(1.03);
+        }
+
+        #media {
+            padding: 20px 0 97px;
+            width: 100%;
+        }
+        .media-container {
+            margin: 0 auto;
+            width: 640px; height: 360px;
+
+            box-shadow: 0px 2px 10px #222;
+        }
+
+        #section {
+            z-index: -1;
+            position: relative;
+            margin-top: -230px;
+            padding: 300px 0px 120px;
+            width: 100%;
+            background-color: #f2f4f7;
+            background: linear-gradient(45deg, #a8d5f4, #ffb3f5);
+        }
+        .section-container {
+            margin: 0 auto;
+            padding: 30px 25px;
+            width: 960px;
+
+            background-color: #fff;
+            box-sizing: border-box;
+
+            border-radius: 5px;
+            box-shadow: 0px 2px 10px #a9a9a9;
+        }
+
+        #info {
+            padding: 40px 60px;
+        }
+        .info-header {
+            margin-bottom: 30px;
+            font-size: 2.25rem;
+        }
+        .info-img {
+            margin-bottom: 25px;
+        }
+        .info-content {
+            padding: 0px 5px;
+            color: #232;
+            font-size: 1.0rem;
+            font-weight: 600;
+
+            line-height: 1.2rem;
+            letter-spacing: 0.1rem;
+        }
+        #cast {
+            padding: 40px 60px;
+        }
+        .cast-header {
+            margin-bottom: 15px;
+            font-size: 2.25rem;
+        }
+        .cast-board {
+            margin-bottom: 50px;
+            width: 100%; height: 1px;
+            background-color: #e5e5e5;
+        }
+        .cast-card {
+            margin-bottom: 50px;
+            width: 100%;
+            color: #232;
+            overflow: hidden;
+        }
+        .cast-card:last-child { margin-bottom: 0px; }
+        .cast-img {
+            display: block;
+            margin-right: 30px;
+
+            float: left;
+            overflow: hidden;
+        }
+        .cast-character {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .cast-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .cast-desc {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .cast-text {
+            padding-top: 30px;
+            font-size: 1rem;
+            font-weight: 400;
+
+            line-height: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+<div id="nav">
+    <div class="nav-container">
+        <h2 class="nav-logo"><a href="#intro">으라차차 와이키키</a></h2>
+        <ul class="nav-linklist">
+            <li class="nav-link"><a href="#media">#티저 영상</a></li>
+            <li class="nav-link"><a href="#info">#프로그램 정보</a></li>
+            <li class="nav-link"><a href="#cast">#등장인물 소개</a></li>
+        </ul>
+    </div>
+</div>
+<div id="intro">
+    <div class="intro-img-wrapper">
+        <img src="./image/main.jpg" class="intro-img">
+    </div>
+</div>
+<div id="media">
+    <div class="media-container">
+        <object data="http://www.youtube.com/embed/D01MKIuSf0U"
+        width="640" height="360"></object>
+    </div>
+</div>
+<div id="section">
+    <div class="section-container">
+        <div id="info">
+            <h2 class="info-header">프로그램 정보</h2>
+            <img class="info-img" src="./image/info.jpg" width="100%" height="310">
+            <p class="info-content">이 드라마는 이 시대를 살아가는 청춘들의 꿈과 우정 그리고 사랑이야기를 코믹하게 그린 드라마다. 그 중에서도 ‘코믹’에 방점이 찍혀 있다.<br>
+                <br>
+                이 드라마의 기획의도는 단순하면서도 확고하다.<br>
+                오늘 하루도 공부하랴 취업하랴 직장 생활하랴 살림하랴<br>
+                <br>
+                스트레스 받았을 많은 이들이 맥주 캔 하나 들고 맘 편안히 깔깔대며 볼 수 있는 휴식 같은 드라마!<br>
+                그게 바로 우리 드라마의 기획의도이자 목표다.<br>
+                <br>
+                청년실업이니, 5포 세대니, 갑질이니 뭐니 해서 가뜩이나 살기 퍽퍽한 세상인데 이런 드라마 하나쯤 있어도 괜찮지 않을까?!
+            </p>
+        </div>
+        <div id="cast">
+            <h2 class="cast-header">등장인물 소개</h2>
+            <div class="cast-board"></div>
+            <ul class="cast-content">
+                <li class="cast-card">
+                    <img class="cast-img" src="./image/wikiki-kang.jpg" width="307" height="422">
+                    <span class="cast-character">강동구</span>
+                    <span class="cast-name">&nbsp;&nbsp;김정현</span>
+                    <h3 class="cast-desc">게스트하우스 ‘와이키키’의 공동 CEO 겸 프리랜서 연출가</h3>
+                    <p class="cast-text">한때 크리스토퍼 놀란을 뛰어넘는 세계적인 영화감독을 꿈꾸던 유망주. 현재는 망하기 일보 직전인 게스트하우스 와이키키를 운영하며 회갑잔치, 돌잔치, 결혼식 영상 등을 찍어 생계를 유지하는 웃픈 청춘이다. 만만치 않은 영화판에서 고생만 하다 꿈을 접고 현실에 순응해 사는 청년실신시대의 표본과 같은 인물. 밑도 끝도 없는 불운에 꽈배기처럼 꼬여버린 인생 때문인지 극강의 까칠함을 자랑한다. 매사가 시니컬하고 불만투성이지만 마음은 약해 손해만 보는 헛똑똑이다. 정체불명의 싱글맘 윤아와 아기 솔이가 나타나면서 인생이 다시 한 번 파란만장하게 꼬이기 시작한다.</p>
+                </li>
+                <li class="cast-card">
+                    <img class="cast-img" src="./image/wikiki-lee.jpg" width="307" height="422">
+                    <span class="cast-character">이준기</span>
+                    <span class="cast-name">&nbsp;&nbsp;이이경</span>
+                    <h3 class="cast-desc">게스트하우스 ‘와이키키’ 공동 CEO 겸 생계형 단역 배우</h3>
+                    <p class="cast-text">‘믿보배(믿고 보는 배우)’를 꿈꾸며 배우의 길에 들어섰지만, 현실은 단역도 감지덕지하는 생계형 배우. 홈쇼핑 모델부터 방청객 아르바이트까지, 연기의 ‘연’자라도 들어가 있다면 물불 가리지 않고 달려드는 열혈 청춘이다. 염치와 체면은 잃어버린 지 오래고 얍삽함까지 겸비했지만 특유의 긍정에너지로 도무지 미워할 수 없는 매력을 발산한다. ‘와이키키’ 최고의 트러블메이커답게 상상초월 사건사고가 끊이지 않는다. 동구, 두식의 연극영화과 선배로 꿈을 이뤄줄 영화 제작비를 벌자며 게스트하우스 창업을 제안해 인생을 더 꼬이게 만든 원흉이기도 하다.</p>
+                </li>
+                <li class="cast-card">
+                    <img class="cast-img" src="./image/wikiki-bong.jpg" width="307" height="422">
+                    <span class="cast-character">봉두식</span>
+                    <span class="cast-name">&nbsp;&nbsp; 손승원</span>
+                    <h3 class="cast-desc">게스트하우스 ‘와이키키’의 공동 CEO 겸 프리랜서 작가</h3>
+                    <p class="cast-text">말이 좋아 작가지 반 백수나 다름없다. 웹소설 연재, 자소서 대필, 논술 과외 등 돈 되는 글은 다 쓰는 프리랜서 작가. 영화 시나리오는커녕 ‘잡가’가 된 것도 모자라 동네 편의점 아르바이트까지 전전하며 연명하고 있다. 정 많고, 마음 약하고, 소녀 감성 충만한 순수함까지 간직하고 있지만 위기의 순간엔 잔머리도 굴릴 줄 아는 곰 같은 여우다. 운동복 차림의 반백수 몰골에도 순정만화에서 튀어나온 듯한 러블리한 외모의 소유자. 그러나 현실은 연애 한 번 못해본 모태솔로다. 손끝만 스쳐도 사랑을 시작할 준비가 되어 있는 대한민국 최고의 금사빠다.</p>
+                </li>
+                <li class="cast-card">
+                    <img class="cast-img" src="./image/wikiki-han.jpg" width="307" height="422">
+                    <span class="cast-character">한윤아</span>
+                    <span class="cast-name">&nbsp;&nbsp;정인선</span>
+                    <h3 class="cast-desc">게스트하우스 ‘와이키키’에 불시착한 정체불명 싱글맘</h3>
+                    <p class="cast-text">딸 솔이와 함께 벼락같이 등장해 게스트하우스 와이키키를 발칵 뒤집어 놓은 싱글맘. 뭐든 열심히 하겠다는 의욕에 불타지만 막상 결과는 기대에 미치지 못하는 귀여운 허당이다. 청순가련한 외모만큼이나 맑고 깨끗한 성격 탓에 오해를 불러일으키기도 하지만 사랑스런 매력의 소유자. 솔이를 아빠 없이 홀로 키우게 된 기구한 운명을 무한 긍정 에너지와 천진난만함으로 극복 중이다. 조금 서툴지만 열정 넘치는 모습으로 엉겁결에 눌러앉게 된 ‘와이키키’에서 청소, 요리, 빨래 등을 담당하고 있다.</p>
+                </li>
+                <li class="cast-card">
+                    <img class="cast-img" src="./image/wikiki-seo.jpg" width="307" height="422">
+                    <span class="cast-character">강서진</span>
+                    <span class="cast-name">&nbsp;&nbsp;고원희</span>
+                    <h3 class="cast-desc">언론사 기자를 꿈꾸는 취업준비생, 동구의 동생</h3>
+                    <p class="cast-text">동구의 친동생이라는 이유로 팔자에 없던 ‘와이키키’ 남자들의 뒤치다꺼리를 담당하고 있다. 철없고 게으른 오빠들을 챙기느라 폭풍 잔소리 머신에 등극했다. 오빠들에게 쉴 새 없이 당하기만 하는 호구처럼 보이지만, 사실은 집안 살림을 도맡아 하는 실질적 권력자. 남성호르몬 과다분비로 하루만 면도를 하지 않아도 코 밑과 턱에 수염이 자라나는 특이 체질을 지닌 탓에 삶에 애로사항이 많다. 덕분에 ‘와이키키’에서는 영화 ‘스타워즈’에 나오는 털복숭이 ‘츄바카’라는 별명으로 불린다. </p>
+                </li>
+                <li class="cast-card">
+                    <img class="cast-img" src="./image/wikiki-min.jpg" width="307" height="422">
+                    <span class="cast-character">민수아</span>
+                    <span class="cast-name">&nbsp;&nbsp;이주우</span>
+                    <h3 class="cast-desc">동구의 전 여친, 쇼핑몰 모델</h3>
+                    <p class="cast-text">아름다운 미모와 환상적인 몸매로 부러움의 시선을 한눈에 받는 극강 비주얼의 소유자. 똑똑한 척, 세련된 척, 쿨한 척이 생활화된 깜찍한 철부지다. 하지만 실상은 습자지 수준의 팔랑귀와 팥으로 메주를 쑨대도 믿는 사기 친화형 성격 덕분에 사람들에게 이용당하거나 사기를 당하는 게 일상인 여우같은 곰이다. 시간이 지날수록 쉽지 않은 모델 생활만으로도 머리가 아픈데, 도무지 앞길이 보이지 않는 남자친구 동구 때문에 고민이 많다.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
