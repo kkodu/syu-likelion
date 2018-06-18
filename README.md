@@ -24,8 +24,8 @@
 * CSS 스타일 사용법 및 우선순위 알아보기
 * CSS 속성 (박스, 가시, 폰트, 위치, 그림자, float, overflow, gradient)
 * 라이브 코딩
-* 부트스트랩 맛보기
-* git 저장소 생성
+
+* git repository 생성
 
 
 
